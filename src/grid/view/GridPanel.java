@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
-
+import javax.swing.table.DefaultTableModel;
 
 import grid.controller.GridController;
 
@@ -42,7 +42,7 @@ public class GridPanel extends JPanel
 		this.titleLabel= new JLabel("TacToeTic");
 		
 		
-//		setupListeners();
+		setupListeners();
 		setupTable();
 		setupPanel();
 		setupLayout();
@@ -52,14 +52,24 @@ public class GridPanel extends JPanel
 	
 	private void setupTable()
 	{
-//		DefaultTableModel data = new DefaultTableModel(baseController.getGrid(), new String [] {"one","two","three", "four","five"});
+		DefaultTableModel data = new DefaultTableModel(baseController.getGrid(), new String [] {"one","two","three", "four","five"});
 		gridTable = new JTable();
-//		gridTable.setModel(data);
+		gridTable.setModel(data);
 		gridPane = new JScrollPane();
 		gridPane.setViewportView(gridTable);
 	}
 	
 	
+	
+	private void setupListeners()
+	{
+		enter.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent Click)
+			{
+				
+			}
+		}
 	
 	private void setupPanel()
 	{
@@ -94,8 +104,6 @@ public class GridPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, columnLabel, 120, SpringLayout.SOUTH, titleLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, titleLabel, 34, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, titleLabel, 10, SpringLayout.WEST, this);
-		
-
 	
 	}
 

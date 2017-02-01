@@ -1,12 +1,13 @@
 package grid.controller;
 
+import grid.model.Game;
 import grid.view.*;
 import javax.swing.JOptionPane;
 
-public class GridController 
+public class GridController
 {
-	private GridFrame appFrame;
 	private Game [][] grid;
+	private GridFrame appFrame;
 	
 	public GridController()
 	{
@@ -18,11 +19,17 @@ public class GridController
 	{
 		for(int row = 0; row < grid.length; row++)
 		{
-			for(int col = 0; col <grid[0].length; col++)
+			for(int col = 0; col < grid[0].length; col++)
 			{
 				grid[row][col] = new Game();
+				appFrame = new GridFrame(this);
 			}
 		}
+	}
+	
+	public GridFrame getAppFrame()
+	{
+		return appFrame;
 	}
 
 	public void start()
