@@ -27,6 +27,11 @@ public class GridController
 		}
 	}
 	
+	private void getGrid()
+	{
+		
+	}
+	
 	public GridFrame getAppFrame()
 	{
 		return appFrame;

@@ -61,16 +61,6 @@ public class GridPanel extends JPanel
 	
 	
 	
-	private void setupListeners()
-	{
-		enter.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent Click)
-			{
-				
-			}
-		}
-	
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
